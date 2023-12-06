@@ -6,6 +6,8 @@ import ImageDetails from './components/ImageDetails';
 import { Template } from './types';
 import style from './App.module.scss';
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 const App: React.FC = () => {
   const [templates, setTemplates] = useState<Template[]>([]);
   const [selectedThumbnailIndex, setSelectedThumbnailIndex] = useState(0);
@@ -15,7 +17,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<Template[]>('/data/templates.json');
+        const response = await axios.get<Template[]>(`${SERVER_URL}/listimages`);
         const { data } = response;
 
         setTemplates(data);

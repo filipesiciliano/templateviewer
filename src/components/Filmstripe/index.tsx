@@ -3,6 +3,7 @@ import React from 'react';
 import Thumbnail from '../Thumbnail';
 import { FilmstripProps } from '../../types';
 import style from './Filmstrip.module.scss';
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Filmstrip: React.FC<FilmstripProps> = ({ templates, selectedThumbnailIndex, onThumbnailClick, offset }) => {
   const handleThumbnailClick = (index: number) => {
@@ -15,7 +16,7 @@ const Filmstrip: React.FC<FilmstripProps> = ({ templates, selectedThumbnailIndex
         {templates.map((template, index) => (
           <Thumbnail
             key={index}
-            thumbnail={`/images/thumbnails/${template.thumbnail}`}
+            thumbnail={`${SERVER_URL}/thumbnails/${template.thumbnail}`}
             thumbnailName={template.thumbnail}
             isSelected={index === selectedThumbnailIndex}
             onClick={() => handleThumbnailClick(index)}
