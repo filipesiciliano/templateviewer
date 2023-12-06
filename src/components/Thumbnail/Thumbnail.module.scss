@@ -1,0 +1,16 @@
+.thumbnail {
+    text-align: center;
+    margin-right: 8px;
+    img {
+        cursor: pointer;
+        border: 1px solid #ccc;
+        width: 120px;
+        &:hover {
+            opacity: 0.5;
+        }
+        &.selected {
+            border: 1px solid #000;
+            opacity: 0.5;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.filmstrip {
+  width: 520px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  .carrouselInner {
+    display: flex;
+    scroll-behavior: smooth;
+    transition: transform 0.5s ease-in-out;
+  }
+}

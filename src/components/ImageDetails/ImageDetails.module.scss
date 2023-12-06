@@ -1,0 +1,27 @@
+.imageDetails {
+    img.imageLarge {
+        width: auto;
+        max-height: 300px;
+    }
+    ul.descriptionList {
+        text-align: left;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                margin-bottom: 8px;
+                span {
+                    font-weight: bold;
+                }
+            }
+    }
+    .imageControls {
+        img {
+            cursor: pointer;
+        }
+        .disabled {
+            cursor : not-allowed;
+            opacity: 0.2;
+        }
+    }
+}
